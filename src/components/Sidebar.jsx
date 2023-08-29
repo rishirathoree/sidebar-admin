@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
   const sidebarMenu = [
@@ -172,7 +172,7 @@ const Sidebar = () => {
               {item.submenus &&
                 item.submenus.map((submenuItem, idx) => (
                   <li key={idx} className='pl-8 w-full p-4'>
-                    <p className={`font-medium text-[12px] ${activePath.startsWith(submenuItem.link) ? 'text-blue-500 ' : 'text-black/80'}`}>{submenuItem.name}</p> {/* this is submenu name */}
+                    <Link to={`${submenuItem.link}`}><p className={`font-medium text-[12px] ${activePath.startsWith(submenuItem.link) ? 'text-blue-500 ' : 'text-black/80'}`}>{submenuItem.name}</p> {/* this is submenu name */}</Link>
                   </li>
                 ))}
             </ul>
