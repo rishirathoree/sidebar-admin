@@ -1,37 +1,26 @@
 import React, { useEffect, useRef } from 'react'
 
 const Navbar = () => {
-  const navmenus = ['Product', 'Resources','Solution','Blog']
-  const navss = useRef()
-  useEffect(()=>{console.log(navss.current.offsetHeight)},[])
   return (
-    <>
-    <div ref={navss} className='flex items-center justify-between w-full top-0 right-0 fixed lg:px-20 md:px-12 sm:px-4 py-4'>
-        <span><p className='font-semibold text-lg tracking-tight'>Boxsol</p></span>
-        <ul className=' lg:flex md:hidden sm:hidden items-center space-x-8'>
-        {navmenus.map((item,idx)=>{
-          return(
-        <li className='underline-anime'><p className='font-medium text-black/50 text-[12px]'>{item}</p></li> 
-          )
-        })}
-        </ul>
-      <div className='space-y-[3px] lg:hidden md:block sm:block'>
-        <span className='block bg-black w-4 h-[2px]'></span>
-        <span className='block bg-black w-2 h-[2px]'></span>
-        <span className='block bg-black w-4 h-[2px]'></span>
-      </div>
-      <span className=' lg:flex md:hidden sm:hidden items-center space-x-6'>
-        <button className='font-semibold text-white text-[10px] bg-black px-4 py-2 rounded'>Start for free</button>
-      </span>
+    <div className='fixed border-b border-dashed bg-white top-0 right-0 flex items-center justify-end lg:px-20 md:px-12 sm:px-4 lg:w-[calc(100%-288px)] md:w-[calc(100%-288px)] sm:w-full'>
+
+        <div className='flex items-center p-[13px] space-x-8'>
+
+          <span className='block group relative '>
+          <i className='bx bx-chat'></i>
+          <div className='w-80 rounded-lg shadow-black/5 bounce-effect ring-1 ring-black/5 shadow-lg opacity-0 z-50 group-hover:opacity-100 invisible group-hover:visible absolute h-60 group-hover:h-80 duration-200 top-10 after:w-full after:h-4 after:opacity-0 after:bg-black after:-top-4 after:right-0 after:absolute right-0 bg-white'></div>
+          </span>
+
+          <span className='block relative  w-8 h-8 group rounded-md bg-blue-500'>
+          <div className='w-80 rounded-lg shadow-black/5 bounce-effect ring-1 ring-black/5 shadow-lg opacity-0 z-50 group-hover:opacity-100 invisible group-hover:visible absolute h-60 group-hover:h-80 duration-200 top-10 after:w-full after:h-4 after:opacity-0 after:bg-black after:-top-4 after:right-0 after:absolute right-0 bg-white'></div>
+          </span>
+
+        </div>
     </div>
-    </>
   )
 }
 
 export default Navbar
 
-
-
-
-
-// 100 height
+// const navss = useRef()
+// useEffect(()=>{console.log(navss.current.offsetHeight)},[])

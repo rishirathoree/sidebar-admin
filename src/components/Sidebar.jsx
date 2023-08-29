@@ -7,7 +7,7 @@ const Sidebar = () => {
     {
       name: 'Dashboard',
       icon: 'dashboard-icon',
-      link: '/dashboard',
+      link: '/',
     },
     
     {
@@ -183,19 +183,20 @@ const Sidebar = () => {
     item.submenus?.some((submenuItem) => activePath.startsWith(submenuItem.link))
   );
   const [expanded, setExpanded] = useState(matchingSubmenuIndex);
+  const navigateTo = (route) => {window.location.href = route;};
   const handleToggle = (idx) => {
     setExpanded((prevExpanded) => (prevExpanded === idx ? null : idx));
   };
   return (
     <>
-    <div className='h-screen fixed z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white box-shadow'>
-      <span className='block px-8 py-4 w-full'>
-        <span className='block w-8 h-8 rounded-md overflow-hidden bg-blue-500'><img src={logo} className='w-full h-full object-fill' alt="" /></span>
+    <div className='h-screen fixed lg:flex md:flex sm:hidden z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white box-shadow'>
+      <span className='block px-8 py-4 w-full border-b border-dashed'><img src={logo} className='w-32 h-full object-cover' alt="" />
       </span>
       <ul className='p-4 flex-1 h-2/3 overflow-hidden dontShowScroll overflow-y-auto w-full'>
         {sidebarMenu.map((item, idx) => (
-          <li key={idx}>
+          <li onClick={()=>{{!item.submenus && navigateTo(item.link)}}} key={idx}>
             <span
+            
               className='peer p-4 flex items-center justify-between cursor-pointer'
               onClick={()=>{handleToggle(idx)}} // Toggle submenu on click
             >

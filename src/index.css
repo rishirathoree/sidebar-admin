@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{font-family: 'Poppins', sans-serif;}
-body{margin-left: 288px;}
+body{background-color: #f8f8f8;}  /* this is adjusted */
 .box-shadow{box-shadow: -25px 28px 61px 4px rgba(0,0,0,0.26);}
 .bounce-effect{
     transition: all 700ms cubic-bezier(.47,1.64,.41,.8);
