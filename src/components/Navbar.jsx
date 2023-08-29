@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 const Navbar = () => {
   return (
-    <div className='fixed border-b border-dashed bg-white top-0 right-0 flex items-center justify-end lg:px-20 md:px-12 sm:px-4 lg:w-[calc(100%-288px)] md:w-[calc(100%-288px)] sm:w-full'>
+    <div className='fixed border-b border-dashed z-50 bg-white top-0 right-0 flex items-center justify-end lg:px-20 md:px-12 sm:px-4 lg:w-[calc(100%-288px)] md:w-[calc(100%-288px)] sm:w-full'>
 
         <div className='flex items-center p-[13px] space-x-8'>
 
