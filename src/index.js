@@ -13,7 +13,7 @@ const patternPrint = (row,reverse) => {
     else{
         for(let i=row;i>=1;i--){
             let pattern = '';
-            for(let j=1;j<=i;j++){
+            for(let j=1;j<=i;j--){
               pattern += j
             }
             pattern += `\n`
@@ -21,4 +21,4 @@ const patternPrint = (row,reverse) => {
           }
     }
 }
-patternPrint(10,false)
+patternPrint(10,true)
