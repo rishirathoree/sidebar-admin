@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{font-family: 'Poppins', sans-serif;}
+body{margin-top: 63px;}
+.box-shadow{box-shadow: -25px 28px 61px 4px rgba(0,0,0,0.26);}
+.bounce-effect{
+    transition: all 700ms cubic-bezier(.47,1.64,.41,.8);
+}
+.underline-anime{
+    position: relative;
+    cursor: pointer;
+}
+.underline-anime::after{
+    content: '';
+    width: 100%;
+    bottom: -4px;
+    opacity: 0;
+    left: 0;
+    border-radius: 5000px;
+    transform: scaleX(0);
+    height: 2px;
+    background: rgba(0, 0, 0, 0.664);
+    position: absolute;
+    transition: 0.5s;
+    transform-origin: left;
+}
+.underline-anime:hover::after{
+    transform: scaleX(1);
+    opacity: 1;
+}
+.dontShowScroll::-webkit-scrollbar{
+    display: none;
+}
