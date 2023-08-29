@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/images/logo.png'
 
 const Sidebar = () => {
   const sidebarMenu = [
@@ -189,7 +190,7 @@ const Sidebar = () => {
     <>
     <div className='h-screen fixed z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white box-shadow'>
       <span className='block px-8 py-4 w-full'>
-        <span className='block w-4 h-4 rounded bg-blue-500'></span>
+        <span className='block w-8 h-8 rounded-md overflow-hidden bg-blue-500'><img src={logo} className='w-full h-full object-fill' alt="" /></span>
       </span>
       <ul className='p-4 flex-1 h-2/3 overflow-hidden dontShowScroll overflow-y-auto w-full'>
         {sidebarMenu.map((item, idx) => (
