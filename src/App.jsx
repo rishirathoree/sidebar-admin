@@ -9,7 +9,7 @@ const App = () => {
     <>
     <BrowserRouter>
     <Sidebar />
-    
+    <Home/>
     </BrowserRouter>
     </>
   )

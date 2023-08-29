@@ -147,7 +147,6 @@ const Sidebar = () => {
     item.submenus?.some((submenuItem) => activePath.startsWith(submenuItem.link))
   );
   const [expanded, setExpanded] = useState(matchingSubmenuIndex);
-  console.log(activePath)
   const handleToggle = (idx) => {
     setExpanded((prevExpanded) => (prevExpanded === idx ? null : idx));
   };
