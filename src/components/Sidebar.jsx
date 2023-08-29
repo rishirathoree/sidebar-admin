@@ -189,7 +189,7 @@ const Sidebar = () => {
   };
   return (
     <>
-    <div className='h-screen fixed lg:flex md:flex sm:hidden z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white box-shadow'>
+    <div className='h-screen fixed lg:flex md:flex sm:hidden z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white border-r-[1px] border-black/5'>
       <span className='block px-8 py-4 w-full border-b border-dashed'><img src={logo} className='w-32 h-full object-cover' alt="" />
       </span>
       <ul className='p-4 flex-1 h-2/3 overflow-hidden dontShowScroll overflow-y-auto w-full'>
