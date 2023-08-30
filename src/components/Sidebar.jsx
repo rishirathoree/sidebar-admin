@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/images/logo.png'
+import logo from '../assets/images/logo.svg'
 
 const Sidebar = () => {
   const sidebarMenu = [
     {
       name: 'Dashboard',
-      icon: 'dashboard-icon',
-      link: '/',
+      icon: 'bxs-dashboard',
+      link: '/dash',
     },
     
     {
       name: 'Account',
-      icon: 'account-icon',
+      icon: 'bx-stats',
       link: '/account',
       submenus: [
         {
@@ -43,7 +43,7 @@ const Sidebar = () => {
     },
     {
       name: 'Authentication',
-      icon: 'authentication-icon',
+      icon: 'bx-link',
       link: '/authentication',
       submenus: [
         {
@@ -66,7 +66,7 @@ const Sidebar = () => {
     },
     {
       name: 'Subscriptions',
-      icon: 'subscriptions-icon',
+      icon: 'bx-add-to-queue',
       link: '/subscriptions',
       submenus: [
         {
@@ -89,7 +89,7 @@ const Sidebar = () => {
     },
     {
       name: 'Chat',
-      icon: 'chat-icon',
+      icon: 'bx-chat',
       link: '/chat',
       submenus: [
         {
@@ -146,7 +146,7 @@ const Sidebar = () => {
     },
     {
       name: 'Pages',
-      icon: 'pages-icon',
+      icon: 'bx-spreadsheet',
       link: '/pages',
       submenus: [
         {
@@ -173,7 +173,7 @@ const Sidebar = () => {
     },
     {
       name: 'Calendar',
-      icon: 'calendar-icon',
+      icon: 'bx-calendar-alt',
       link: '/calendar',
     },
   ];
@@ -189,29 +189,29 @@ const Sidebar = () => {
   };
   return (
     <>
-    <div className='h-screen fixed lg:flex md:flex sm:hidden z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white border-r-[1px] border-black/5'>
-      <span className='block px-8 py-4 w-full border-b border-dashed'><img src={logo} className='w-32 h-full object-cover' alt="" />
+    <div className='h-screen grop fixed lg:flex md:flex sm:hidden z-50 w-72 duration-1000  flex items-start justify-between flex-col top-0 left-0 bg-white border-r-[1px] border-black/5'>
+      <span className='flex items-center justify-between w-full p-4'>
+        <img src={logo} className='w-8 h-8 object-cover' alt="" />
+        <i class='bx bx-dots-vertical-rounded'></i>
       </span>
-      <ul className='p-4 flex-1 h-2/3 overflow-hidden dontShowScroll overflow-y-auto w-full'>
+      <ul className=' flex-1 h-2/3 overflow-hidden dontShowScroll overflow-y-auto w-full'>
         {sidebarMenu.map((item, idx) => (
           <li onClick={()=>{{!item.submenus && navigateTo(item.link)}}} key={idx}>
-            <span
-            
-              className='peer p-4 flex items-center justify-between cursor-pointer'
-              onClick={()=>{handleToggle(idx)}} // Toggle submenu on click
-            >
-              <p className={`font-semibold duration-500 text-[12px] ${expanded == idx ? 'text-blue-500' : ''}`}>{item.name}</p>  {/* this is menu name */}
-              {item.submenus && <i className={`bx duration-500  ${expanded == idx ? 'rotate-180' : ''}  ${expanded == idx ? 'bx-minus text-blue-500' : 'bx-plus'}`}></i>}
+            <span className='peer flex items-center p-4 justify-between cursor-pointer' onClick={()=>{handleToggle(idx)}}>
+              <span className='flex items-center space-x-2'>
+                <i className={`bx ${item.icon} duration-500 ${activePath.includes(item.link) || expanded == idx ? 'scale-x-[-1] text-violet-500' : 'text-gray-600/80' } ${expanded == idx  ? 'scale-x-[-1] text-violet-500' : 'text-gray-600/80'}`}></i>
+              <p className={`font-semibold duration-500 text-[12px] ${activePath.includes(item.link) || expanded == idx ? 'text-violet-500' : 'text-gray-600/80'}`}>{item.name}</p>  {/* this is menu name */}</span>
+              {item.submenus && <i className={`bx duration-500 bx-chevron-down  ${expanded == idx ? 'rotate-180 text-violet-500' : 'text-gray-600/80'}`}></i>}
             </span>
             <ul
-              className={`${
+              className={` ${
                 item.submenus && expanded === idx ? 'max-h-[400px] duration-1000' : 'duration-700 max-h-0 '
               }  overflow-hidden`}
             >
               {item.submenus &&
                 item.submenus.map((submenuItem, idx) => (
-                  <li key={idx} className='pl-8 p-4 w-full'>
-                    <Link to={`${submenuItem.link}`}><p className={`font-medium text-[12px] ${activePath.startsWith(submenuItem.link) ? 'text-blue-500 ' : 'text-black/80'}`}>{submenuItem.name}</p> {/* this is submenu name */}</Link>
+                  <li key={idx} className={`mx-8 px-4 py-2 relative before:absolute before:w-[1px]  rounded-md before:bg-black/5 before:-left-2 before:h-full ${activePath.startsWith(submenuItem.link) ? ' bg-gray-50/80' : 'hover:bg-gray-50/5'}`}>
+                    <Link to={`${submenuItem.link}`}><p className={` text-[12px] ${activePath.startsWith(submenuItem.link) ? 'font-semibold opacity-100 text-gray-500 ' : 'opacity-50 text-black/80 font-normal'}`}>{submenuItem.name}</p> {/* this is submenu name */}</Link>
                   </li>
                 ))}
             </ul>

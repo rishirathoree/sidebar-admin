@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{font-family: 'Poppins', sans-serif;}
-body{background-color: #f8f8f8;}  /* this is adjusted */
+body{background-color: #f5f8fa;}  /* this is adjusted */
 .box-shadow{box-shadow: -25px 28px 61px 4px rgba(0,0,0,0.26);}
 .bounce-effect{
     transition: all 700ms cubic-bezier(.47,1.64,.41,.8);
@@ -30,13 +30,15 @@ body{background-color: #f8f8f8;}  /* this is adjusted */
     transform: scaleX(1);
     opacity: 1;
 }
-.dontShowScroll::-webkit-scrollbar{
+::-webkit-scrollbar{
     width: 4px;
 }
-.dontShowScroll::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     background-color: rgba(137, 137, 137, 0.77);
 }
 
-.dontShowScroll::-webkit-scrollbar-track{
+::-webkit-scrollbar-track{
     background-color: rgba(201, 195, 195, 0.274);
 }
+
+.shadow-custom{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
